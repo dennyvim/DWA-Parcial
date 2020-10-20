@@ -29,7 +29,7 @@ export default function Form({ hide }){
         hide()
     }
     return(
-        <>
+        <div className="form__container">
             <h1>Agrega una mascota</h1>
             <form className="AddPet__Form" onSubmit={handleSubmit}>
                 <label htmlFor ="nombre">Nombre</label>
@@ -59,8 +59,8 @@ export default function Form({ hide }){
                     <option>Hospitalización</option>
                 </select>
                 <button type="submit">Enviar</button>
+                <button type="button" onClick={()=>hide()}>Ocultar</button>
             </form>
-            <button type="button" onClick={()=>console.log(pets)}>Probar</button>
-        </>
+        </div>
     );
 }

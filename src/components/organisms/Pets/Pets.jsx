@@ -10,13 +10,16 @@ const Pets = () => {
     const [showForm, setShowForm] = useState(false);
 
     return <>
-        <Add execute={()=>setShowForm(true)} />
-        <ul>
-            {pets.map((pet, index)=><li key={index}>{pet.nombre}</li>)}
+        <ul className="pet__container">
+            {pets.map((pet, index)=>
+            <li key={index} className="pet__item"> nombre: {pet.nombre} <br/> sexo: {pet.sexo} <br/> edad:{pet.edad} <br/> tipo: {pet.tipoDeMascota} <br/> servicio: {pet.servicio}
+            </li>)}
         </ul>
+        <div className="add">
+            <Add execute={()=>setShowForm(true)} />
+        </div>
         {showForm && <Form hide={()=>setShowForm(false)} />}
     </>
-
 }
 
 export default Pets;
